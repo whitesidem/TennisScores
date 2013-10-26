@@ -8,4 +8,4 @@ wins after advantage
 loses advantage
 outright win without deuce
 whitewash
-* decouple game score value object from in sesion updated version!!
+decouple game score value object from in sesion updated version!!
