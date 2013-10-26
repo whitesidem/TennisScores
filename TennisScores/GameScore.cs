@@ -4,14 +4,14 @@ namespace TennisScores
     {
         private int[] Points {  get;  set; }
 
-        private readonly int[] _scoreValues = new[]{0, 15, 30, 40};
+        private readonly ScoreTypes[] _scoreValues = new[] { ScoreTypes.Love, ScoreTypes.Fifteen, ScoreTypes.Thirty, ScoreTypes.Fourty, ScoreTypes.Deuce, ScoreTypes.Advantage };
 
         public GameScore()
         {
             Points = new int[2];
         }
 
-        public int PlayerScore(int playerId)
+        public ScoreTypes PlayerScore(int playerId)
         {
             return _scoreValues[Points[playerId]];
         }
@@ -20,6 +20,16 @@ namespace TennisScores
         public void AddPoint(int playerNumber)
         {
             Points[playerNumber] ++;
+            AdjustPointsForDeuceSenario();
+        }
+
+        private void AdjustPointsForDeuceSenario()
+        {
+            if (PlayerScore(Game.Player1) == ScoreTypes.Fourty && PlayerScore(Game.Player2) == ScoreTypes.Fourty)
+            {
+                Points[Game.Player1]++;
+                Points[Game.Player2]++;
+            }
         }
     }
 }

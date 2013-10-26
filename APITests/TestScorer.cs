@@ -24,15 +24,17 @@ namespace APITests
             _game.WinPoint(Game.Player1);
 
             //assert
-            AssertScores(15, 0);
+            AssertScores(ScoreTypes.Fifteen, ScoreTypes.Love);
         }
 
-        [TestCase(0, 0)]
-        [TestCase(15, 15, Game.Player1, Game.Player2)]
-        [TestCase(30, 15, Game.Player1, Game.Player2, Game.Player1)]
-        [TestCase(30, 30, Game.Player1, Game.Player2, Game.Player1, Game.Player2)]
-        [TestCase(40, 30, Game.Player1, Game.Player2, Game.Player1, Game.Player2, Game.Player1)]
-        public void TestScores(int player1Score, int player2Score, params int[] playerWinsPoint)
+        [TestCase(ScoreTypes.Love, ScoreTypes.Love)]
+//        [TestCase(ScoreTypes.Fifteen, ScoreTypes.Love, Game.Player1)]
+        [TestCase(ScoreTypes.Fifteen, ScoreTypes.Fifteen, Game.Player1, Game.Player2)]
+        [TestCase(ScoreTypes.Thirty, ScoreTypes.Fifteen, Game.Player1, Game.Player2, Game.Player1)]
+        [TestCase(ScoreTypes.Thirty, ScoreTypes.Thirty, Game.Player1, Game.Player2, Game.Player1, Game.Player2)]
+        [TestCase(ScoreTypes.Fourty, ScoreTypes.Thirty, Game.Player1, Game.Player2, Game.Player1, Game.Player2, Game.Player1)]
+        [TestCase(ScoreTypes.Deuce, ScoreTypes.Deuce, Game.Player1, Game.Player2, Game.Player1, Game.Player2, Game.Player1, Game.Player2)]
+        public void TestScores(ScoreTypes player1Score, ScoreTypes player2Score, params int[] playerWinsPoint)
         {
             //arrange
             //act
@@ -50,7 +52,7 @@ namespace APITests
             _gameScore = gameScore;
         }
 
-        private void AssertScores(int score1, int score2)
+        private void AssertScores(ScoreTypes score1, ScoreTypes score2)
         {
             Assert.That(_gameScore.PlayerScore(Game.Player1), Is.EqualTo(score1), "player 1 score not as expected");
             Assert.That(_gameScore.PlayerScore(Game.Player2), Is.EqualTo(score2), "player 2 score not as expected");
