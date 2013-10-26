@@ -23,9 +23,9 @@ namespace TennisScores
 
         private void NotifyScoreChanged()
         {
-            var gameScoreDTO = new GameScoreDto(_gameScore.PlayerScore(Game.Player1),
-                                                _gameScore.PlayerScore(Game.Player2));
-            _scoreListener.OnScoreChanged(gameScoreDTO);
+            var gameScoreDto = new GameScoreDto(_gameScore.PlayerScore(Player1),
+                                                _gameScore.PlayerScore(Player2));
+            _scoreListener.OnScoreChanged(gameScoreDto);
         }
 
         public void WinPoint(int playerNumber)

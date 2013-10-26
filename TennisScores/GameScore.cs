@@ -1,5 +1,3 @@
-using System;
-
 namespace TennisScores
 {
     public class GameScore
@@ -13,7 +11,7 @@ namespace TennisScores
             Points = new int[2];
         }
 
-        public ScoreTypes PlayerScore(int playerId)
+        internal ScoreTypes PlayerScore(int playerId)
         {
             return _scoreValues[Points[playerId]];
         }
