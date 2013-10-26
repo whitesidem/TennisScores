@@ -4,6 +4,6 @@ namespace APITests
 {
     public interface IScoreListener
     {
-        void OnScoreChanged(GameScore gameScore);
+        void OnScoreChanged(GameScoreDto gameScore);
     }
 }

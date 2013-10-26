@@ -11,6 +11,7 @@ namespace TennisScores
 
         public Game(IScoreListener scoreListener)
         {
+            _gameScore = new GameScore();
             _scoreListener = scoreListener;
         }
 
@@ -22,14 +23,21 @@ namespace TennisScores
 
         private void NotifyScoreChanged()
         {
-            _scoreListener.OnScoreChanged(_gameScore);
+            var gameScoreDTO = new GameScoreDto(_gameScore.PlayerScore(Game.Player1),
+                                                _gameScore.PlayerScore(Game.Player2));
+            _scoreListener.OnScoreChanged(gameScoreDTO);
         }
 
         public void WinPoint(int playerNumber)
         {
             _gameScore.AddPoint(playerNumber);
+            NotifyScoreChanged();
         }
 
+        public bool WinnerExists()
+        {
+            return _gameScore.WinnerExists();
+        }
 
     }
 }

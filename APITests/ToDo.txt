@@ -1,4 +1,11 @@
 ﻿zero point game
 player1 scores point 15 - 0
 player2 scores point 15 - 15
-* player1 scores point 30 - 15
+player1 scores point 30 - 15
+progress to deuce rules
+progress to advantage rules
+wins after advantage
+loses advantage
+outright win without deuce
+whitewash
+* decouple game score value object from in sesion updated version!!

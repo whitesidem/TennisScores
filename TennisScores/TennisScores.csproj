@@ -43,9 +43,11 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="GameScore.cs" />
+    <Compile Include="GameScoreDto.cs" />
     <Compile Include="IScoreListener.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomGameSimulator.cs" />
     <Compile Include="ScoreTypes.cs" />
   </ItemGroup>
   <ItemGroup>

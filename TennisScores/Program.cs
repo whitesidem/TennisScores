@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TennisScores
 {
-    class Program
+    class Program 
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.Out.WriteLine("Hello World");
+            var gameSimulator = new RandomGameSimulator();
+            gameSimulator.PlayGame();
             Console.ReadKey();
         }
+
     }
 }
