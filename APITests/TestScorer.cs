@@ -34,6 +34,8 @@ namespace APITests
         [TestCase(ScoreTypes.Thirty, ScoreTypes.Thirty, Game.Player1, Game.Player2, Game.Player1, Game.Player2)]
         [TestCase(ScoreTypes.Fourty, ScoreTypes.Thirty, Game.Player1, Game.Player2, Game.Player1, Game.Player2, Game.Player1)]
         [TestCase(ScoreTypes.Deuce, ScoreTypes.Deuce, Game.Player1, Game.Player2, Game.Player1, Game.Player2, Game.Player1, Game.Player2)]
+        [TestCase(ScoreTypes.Advantage, ScoreTypes.Deuce, Game.Player1, Game.Player2, Game.Player1, Game.Player2, Game.Player1, Game.Player2, Game.Player1)]
+        [TestCase(ScoreTypes.Deuce, ScoreTypes.Deuce, Game.Player1, Game.Player2, Game.Player1, Game.Player2, Game.Player1, Game.Player2, Game.Player1, Game.Player2)]
         public void TestScores(ScoreTypes player1Score, ScoreTypes player2Score, params int[] playerWinsPoint)
         {
             //arrange
