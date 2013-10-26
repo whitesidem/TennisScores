@@ -1,0 +1,4 @@
+﻿zero point game
+player1 scores point 15 - 0
+player2 scores point 15 - 15
+* player1 scores point 30 - 15
